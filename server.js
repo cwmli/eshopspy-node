@@ -15,7 +15,7 @@ var corsOptions = {
 var Cart = require('./api/models/cartDataModel');
 
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://localhost/Eshopcardsdb');
+mongoose.connect(process.env.MONGODB_URI);
 
 app.use(cors(corsOptions));
 app.use(bodyParser.urlencoded({extended: true}));
